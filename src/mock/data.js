@@ -2,26 +2,26 @@ import { nanoid } from 'nanoid';
 
 // HEAD DATA
 export const headData = {
-  title: '', // e.g: 'Name | Developer'
+  title: 'UX Designer and Researcher', // e.g: 'Name | Developer'
   lang: '', // e.g: en, es, fr, jp
   description: '', // e.g: Welcome to my website
 };
 
 // HERO DATA
 export const heroData = {
-  title: '',
-  name: '',
-  subtitle: '',
-  cta: '',
+  title: 'UX Designer and Researcher',
+  name: 'Erick Gavin',
+  subtitle: 'Erick Gavin is a designer living in Miami who loves reading and Data Visualization.',
+  cta: 'Check out my work',
 };
 
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.jpg',
-  paragraphOne: '',
-  paragraphTwo: '',
-  paragraphThree: '',
-  resume: 'https://www.resumemaker.online/es.php', // if no resume, the button will not show up
+  paragraphOne: 'I am a user experience designer and researcher. I focus on utilizing both quantitative and qualitative data to assist in informing my design process while designing experiences for engagement that connects my audience with the product in a thoughtful manner.',
+  paragraphTwo: 'I believe that to design great products we should be constantly listening to those we assist, iterate in a manner conscious with business requirements, and create interfaces that look great.',
+  paragraphThree: ' ',
+  resume: '', // if no resume, the button will not show up
 };
 
 // PROJECTS DATA
@@ -57,15 +57,16 @@ export const projectsData = [
 
 // CONTACT DATA
 export const contactData = {
-  cta: '',
+  cta: 'Have a cool project you would love to collaborate on?',
   btn: '',
-  email: '',
+  email: 'erickgavin7@gmail.com',
 };
 
 // FOOTER DATA
 export const footerData = {
   networks: [
     {
+      //change to Instagram
       id: nanoid(),
       name: 'twitter',
       url: '',
@@ -73,17 +74,17 @@ export const footerData = {
     {
       id: nanoid(),
       name: 'codepen',
-      url: '',
+      url: 'https://codepen.io/gav07',
     },
     {
       id: nanoid(),
       name: 'linkedin',
-      url: '',
+      url: 'https://www.linkedin.com/in/egavin07/',
     },
     {
       id: nanoid(),
       name: 'github',
-      url: '',
+      url: 'https://github.com/GAV07',
     },
   ],
 };

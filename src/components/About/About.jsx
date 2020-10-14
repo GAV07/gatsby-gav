@@ -25,16 +25,13 @@ const About = () => {
   return (
     <section id="about">
       <Container>
-        <Title title="About Me" />
+        {/* <Title title="About Me" /> */}
         <Row className="about-wrapper">
-          <Col md={6} sm={12}>
-            <Fade bottom duration={1000} delay={600} distance="30px">
-              <div className="about-wrapper__image">
-                <AboutImg alt="profile picture" filename={img} />
-              </div>
-            </Fade>
-          </Col>
-          <Col md={6} sm={12}>
+          <Col className="about-text" md={6} sm={12}>
+            <div id="erick">
+              <div id="e-block"></div>
+              <h1>Erick</h1>
+            </div>
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
               <div className="about-wrapper__info">
                 <p className="about-wrapper__info-text">
@@ -60,6 +57,17 @@ const About = () => {
                     </a>
                   </span>
                 )}
+              </div>
+            </Fade>
+            <div id="gavin">
+              <div id="g-block"></div>
+              <h1>Gavin</h1>
+            </div>
+          </Col>
+          <Col md={6} sm={12}>
+            <Fade bottom duration={1000} delay={600} distance="30px">
+              <div className="about-wrapper__image">
+                <AboutImg alt="profile picture" filename={img} />
               </div>
             </Fade>
           </Col>
