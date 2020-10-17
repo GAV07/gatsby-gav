@@ -1,7 +1,7 @@
 #projects {
   padding: 0;
   background-color: $white-color;
-  color: $black-color;
+  color: $primary-color;
 
   .project-wrapper {
     display: flex;
@@ -22,14 +22,15 @@
       position: relative;
       width: 60%;
       padding: 4em;
-      flex-grow: 4;
+      //flex-grow: 1;
 
       .project-wrapper__text {
         z-index: 2;
+        align-self: flex-start;
 
         &-title {
           font-family: 'PT Serif', serif;
-          font-size: 3em;
+          font-size: 3.5em;
 
           &:after {
             content: '';
@@ -57,7 +58,8 @@
       }
 
       &:nth-child(2),
-      &:nth-child(3) {
+      &:nth-child(3),
+      &:nth-child(6) {
         width: 40%;
       }
       

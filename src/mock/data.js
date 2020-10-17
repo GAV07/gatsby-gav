@@ -5,14 +5,15 @@ const colors = {
   secondary: '#A5C4D4',
   purple: '#7B6D8D',
   blue: '#8499B1',
-  red: '#FF5D73'
+  red: '#FF5D73',
+  black: '#191E27'
 }
 
 // HEAD DATA
 export const headData = {
-  title: 'UX Designer and Researcher', // e.g: 'Name | Developer'
+  title: 'UX Designer and Researcher', 
   lang: '', // e.g: en, es, fr, jp
-  description: '', // e.g: Welcome to my website
+  description: '', 
 };
 
 // HERO DATA
@@ -42,47 +43,57 @@ export const projectsData = [
     info2: '',
     url: '',
     color: colors.blue,
-    repo: '', // if no repo, the button will not show up
+    repo: '', 
   },
   {
     id: nanoid(),
-    img: 'Sleep_Please.png',
+    img: 'Sleep_lower.png',
     title: 'Sleep Please',
     info: '',
     info2: '',
     url: '',
     color: colors.red,
-    repo: '', // if no repo, the button will not show up
+    repo: '', 
   },
   {
     id: nanoid(),
-    img: 'Dream_Impact.png',
+    img: 'Dream_Logo.png',
     title: 'Dream Impact',
     info: '',
     info2: '',
     url: '',
-    color: colors.primary,
-    repo: '', // if no repo, the button will not show up
+    color: colors.black,
+    repo: '', 
   },
   {
     id: nanoid(),
-    img: 'Lavu.png',
+    img: 'Lavu_Dash.png',
     title: 'Lavu',
     info: '',
     info2: '',
     url: '',
     color: colors.purple,
-    repo: '', // if no repo, the button will not show up
+    repo: '', 
   },
   {
     id: nanoid(),
-    img: 'project.jpg',
-    title: '',
+    img: 'Dubois.png',
+    title: 'Dubois Visualizations',
     info: '',
     info2: '',
     url: '',
     color: colors.secondary,
-    repo: '', // if no repo, the button will not show up
+    repo: '', 
+  },
+  {
+    id: nanoid(),
+    img: 'Portfolio.png',
+    title: 'Portfolio Site',
+    info: '',
+    info2: '',
+    url: '',
+    color: colors.blue,
+    repo: '', 
   }
 ];
 
