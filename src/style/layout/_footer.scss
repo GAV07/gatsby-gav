@@ -1,5 +1,5 @@
 .footer {
-  background-color: $dark-grey;
+  background-color: $black-color;
   color: $white-color;
   padding: 2rem 0;
 
@@ -16,7 +16,7 @@
       font-size: 1.3rem;
       transition: all 0.4s;
       display: inline-block;
-      background-color: $dark-grey;
+      background-color: $purple-color;
 
       &:hover,
       &:active {
@@ -33,6 +33,10 @@
     border: 0;
     width: 50%;
     border-top: 2px solid rgba(255, 255, 255, 0.1);
+  }
+
+  p {
+    padding: 2rem 0 0 .5rem;
   }
 }
 

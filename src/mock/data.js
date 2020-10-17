@@ -1,5 +1,13 @@
 import { nanoid } from 'nanoid';
 
+const colors = {
+  primary: '#F7F4F3',
+  secondary: '#A5C4D4',
+  purple: '#7B6D8D',
+  blue: '#8499B1',
+  red: '#FF5D73'
+}
+
 // HEAD DATA
 export const headData = {
   title: 'UX Designer and Researcher', // e.g: 'Name | Developer'
@@ -17,7 +25,7 @@ export const heroData = {
 
 // ABOUT DATA
 export const aboutData = {
-  img: 'profile.jpg',
+  img: 'Gavin.jpg',
   paragraphOne: 'I am a user experience designer and researcher. I focus on utilizing both quantitative and qualitative data to assist in informing my design process while designing experiences for engagement that connects my audience with the product in a thoughtful manner.',
   paragraphTwo: 'I believe that to design great products we should be constantly listening to those we assist, iterate in a manner conscious with business requirements, and create interfaces that look great.',
   paragraphThree: ' ',
@@ -28,12 +36,43 @@ export const aboutData = {
 export const projectsData = [
   {
     id: nanoid(),
-    img: 'project.jpg',
-    title: '',
+    img: 'SAVR_Hero_v1.jpg',
+    title: 'SAVR',
+    info: 'AR platform for physical spaces.',
+    info2: '',
+    url: '',
+    color: colors.blue,
+    repo: '', // if no repo, the button will not show up
+  },
+  {
+    id: nanoid(),
+    img: 'Sleep_Please.png',
+    title: 'Sleep Please',
     info: '',
     info2: '',
     url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    color: colors.red,
+    repo: '', // if no repo, the button will not show up
+  },
+  {
+    id: nanoid(),
+    img: 'Dream_Impact.png',
+    title: 'Dream Impact',
+    info: '',
+    info2: '',
+    url: '',
+    color: colors.primary,
+    repo: '', // if no repo, the button will not show up
+  },
+  {
+    id: nanoid(),
+    img: 'Lavu.png',
+    title: 'Lavu',
+    info: '',
+    info2: '',
+    url: '',
+    color: colors.purple,
+    repo: '', // if no repo, the button will not show up
   },
   {
     id: nanoid(),
@@ -42,17 +81,9 @@ export const projectsData = [
     info: '',
     info2: '',
     url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
-  },
-  {
-    id: nanoid(),
-    img: 'project.jpg',
-    title: '',
-    info: '',
-    info2: '',
-    url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
-  },
+    color: colors.secondary,
+    repo: '', // if no repo, the button will not show up
+  }
 ];
 
 // CONTACT DATA
@@ -68,8 +99,8 @@ export const footerData = {
     {
       //change to Instagram
       id: nanoid(),
-      name: 'twitter',
-      url: '',
+      name: 'instagram',
+      url: 'https://www.instagram.com/regalgavin/',
     },
     {
       id: nanoid(),
@@ -91,5 +122,5 @@ export const footerData = {
 
 // Github start/fork buttons
 export const githubButtons = {
-  isEnabled: true, // set to false to disable the GitHub stars/fork buttons
+  isEnabled: false, // set to false to disable the GitHub stars/fork buttons
 };

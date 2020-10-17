@@ -79,13 +79,25 @@
     }
     .about-text {
       position: relative;
+      overflow: hidden;
+
+      h1 {
+        font-size: 6em;
+        margin: 0;
+      }
 
       #gavin {
         position: absolute;
         right: 0;
         bottom: 0;
         text-align: right;
-        h1 {margin: 0;}
+
+        h1 {
+          position: absolute;
+          top: -55px;
+          left: -200px;
+        }
+        
 
         #g-block {
           position: absolute;
@@ -94,7 +106,7 @@
           z-index: 2;
           width: 200px;
           height: 4px;
-          background-color: $off-pink;
+          background-color: $red-color;
         }
         
       }
@@ -103,7 +115,12 @@
         left: 0;
         top: 0;
         text-align: left;
-        h1 {margin: 0;}
+
+        h1 {
+          position: absolute;
+          top: -25px;
+          
+        }
 
         #e-block {
           position: absolute;
@@ -112,7 +129,7 @@
           z-index: 2;
           width: 200px;
           height: 4px;
-          background-color: $off-pink;
+          background-color: $red-color;
         }
       }
     }
