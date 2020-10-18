@@ -1,38 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import Hero from './Hero/Hero';
-import About from './About/About';
-import Projects from './Projects/Projects';
-import ProjectTiles from './Projects/ProjectTiles';
-import Contact from './Contact/Contact';
-import Footer from './Footer/Footer';
-
-import { PortfolioProvider } from '../context/context';
-
-import { heroData, aboutData, projectsData, contactData, footerData } from '../mock/data';
+import React from 'react';
+import Project from './Projects/Project'
+import Landing from './Landing'
+import { Router, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from "history";
 
 function App() {
-  const [hero, setHero] = useState({});
-  const [about, setAbout] = useState({});
-  const [projects, setProjects] = useState([]);
-  const [contact, setContact] = useState({});
-  const [footer, setFooter] = useState({});
-
-  useEffect(() => {
-    setHero({ ...heroData });
-    setAbout({ ...aboutData });
-    setProjects([...projectsData]);
-    setContact({ ...contactData });
-    setFooter({ ...footerData });
-  }, []);
 
   return (
-    <PortfolioProvider value={{ hero, about, projects, contact, footer }}>
-      <Hero />
-      <ProjectTiles />
-      <About />
-      <Contact />
-      <Footer />
-    </PortfolioProvider>
+    <Router history={createBrowserHistory()}>
+      <Switch>
+        <Route path="/" exact component={Landing} />
+        <Route path="/projects/:id" component={Project} />
+      </Switch>
+    </Router>
+    
   );
 }
 

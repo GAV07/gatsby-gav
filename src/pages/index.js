@@ -4,6 +4,7 @@ import App from '../components/App';
 import { headData } from '../mock/data';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/main.scss';
+import { BrowserRouter } from 'react-router-dom';
 
 export default () => {
   const { title, lang, description } = headData;
@@ -16,7 +17,9 @@ export default () => {
         <html lang={lang || 'en'} />
         <meta name="description" content={description || 'Erick Gavin Portfolio Site'} />
       </Helmet>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </>
   );
 };

@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
+//import { Container } from 'react-bootstrap';
 import PortfolioContext from '../../context/context';
-import ProjectImg from '../Image/ProjectImg';
+//import ProjectImg from '../Image/ProjectImg';
+import { Link } from 'react-router-dom'
+import useProjects from '../Contentful/SetProjects'
 
 const ProjectTiles = () => {
-  const { projects } = useContext(PortfolioContext);
+  //const { projects } = useContext(PortfolioContext);
+  const [projects, isLoading] = useProjects()
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -23,27 +26,23 @@ const ProjectTiles = () => {
     <section id="projects">
         <div className="project-wrapper">
           {projects.map((project) => {
-            const { title, info, info2, url, color, repo, img, id } = project;
+            //const { title, info, info2, url, color, repo, img, id } = project;
 
             return (
-              <div className="project-frame" style={{backgroundImage: `url(/images/${img})`}} key={id}>
+              <div className="project-frame" style={{backgroundImage: `url(${project.fields.featuredImage.fields.file.url})`}} key={project.fields.id}>
                 <div className="project-wrapper__text">
-                  <h3 className="project-wrapper__text-title">{title || 'Project Title'}</h3>
+                  <h3 className="project-wrapper__text-title">{project.fields.name || 'Project Title'}</h3>
                   <div>
                     <p>
-                      {info ||
-                        'A short blurb about the project to entice reading.'}
+                      {info ||'A short blurb about the project to entice reading.'}
                     </p>
-                    <p className="mb-4">{info2 || ''}</p>
                   </div>
                 </div>
-                <a
-                  href={url || '#!'}
-                  target="_blank"
-                  aria-label="Project Link"
-                  rel="noopener noreferrer"
+                <Link
+                  key={project.fields.name}
+                  href={project.fields.name}
                   style={{backgroundColor: color}}
-                ></a>
+                ></Link>
               </div>
             );
           })}
