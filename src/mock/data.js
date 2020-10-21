@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 
-const colors = {
+export const colors = {
   primary: '#F7F4F3',
   secondary: '#A5C4D4',
   purple: '#7B6D8D',

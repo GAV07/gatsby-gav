@@ -5,10 +5,14 @@ h1 {
   font-family: 'PT Serif', serif;
 }
 
-p,
-a {
+
+p {
   font-family: 'PT Sans', sans-serif;
   font-size: $default-font-size;
+}
+a {
+  font-family: 'PT Sans', sans-serif;
+  font-size: $button-font-size;
 }
 
 a,

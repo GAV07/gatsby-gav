@@ -1,14 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-//import { Container } from 'react-bootstrap';
-import PortfolioContext from '../../context/context';
-//import ProjectImg from '../Image/ProjectImg';
+//import PortfolioContext from '../../context/context';
+import { colors } from '../../mock/data'
 import { Link } from 'react-router-dom'
 import useProjects from '../Contentful/SetProjects'
 
 const ProjectTiles = () => {
   //const { projects } = useContext(PortfolioContext);
-  const [projects, isLoading] = useProjects()
-
+  const [projects, isLoading] = useProjects()  
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -26,22 +24,19 @@ const ProjectTiles = () => {
     <section id="projects">
         <div className="project-wrapper">
           {projects.map((project) => {
-            //const { title, info, info2, url, color, repo, img, id } = project;
-
             return (
-              <div className="project-frame" style={{backgroundImage: `url(${project.fields.featuredImage.fields.file.url})`}} key={project.fields.id}>
+              <div className="project-frame" style={{backgroundImage: `url(${project.fields.mainImage.fields.file.url})`}} key={project.fields.slug}>
                 <div className="project-wrapper__text">
-                  <h3 className="project-wrapper__text-title">{project.fields.name || 'Project Title'}</h3>
+                  <h3 className="project-wrapper__text-title">{project.fields.title || 'Project Title'}</h3>
                   <div>
                     <p>
-                      {info ||'A short blurb about the project to entice reading.'}
+                      { project.fields.subtitle || 'A short blurb about the project to entice reading.'}
                     </p>
                   </div>
                 </div>
                 <Link
-                  key={project.fields.name}
-                  href={project.fields.name}
-                  style={{backgroundColor: color}}
+                  key={project.fields.slug}
+                  to={project.fields.slug}
                 ></Link>
               </div>
             );

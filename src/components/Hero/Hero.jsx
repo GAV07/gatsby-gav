@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
 import PortfolioContext from '../../context/context';
+import Motion from './HeroGSAP'
 
 const Header = () => {
   const { hero } = useContext(PortfolioContext);
@@ -55,7 +56,7 @@ const Header = () => {
             </p>
           </div>
         </Fade>
-        <Fade right={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
+        {/* <Fade right={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px"> */}
           <div id="logo">
             <svg width="515px" height="458px" viewBox="0 0 1030 917" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <g id="V1-Fall-2020" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -74,7 +75,7 @@ const Header = () => {
                 </g>
             </svg>
           </div>
-        </Fade>
+        {/* </Fade> */}
       </Container>
     </section>
   );

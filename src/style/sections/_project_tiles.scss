@@ -51,10 +51,17 @@
         background-color: black;
         opacity: 70%;
         z-index: 0;
+        transition: all 0.5s ease-out;
 
         &:hover {
-          opacity: 0;
+          opacity: 20%;
+          background-color: black;
         }
+
+        &:nth-of-type(2n) {background-color: $purple-color;}
+        &:nth-of-type(3n) {background-color: $blue-color;}
+        &:nth-of-type(4n) {background-color: $beige-color;}
+        &:nth-of-type(5n) {background-color: $secondary-color;}
       }
 
       &:nth-child(2),
@@ -62,6 +69,8 @@
       &:nth-child(6) {
         width: 40%;
       }
+
+      
       
     }
 
