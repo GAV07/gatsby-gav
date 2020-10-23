@@ -11,17 +11,18 @@ export default function SingleProject() {
     
     const renderProject = () => {
       if (isLoading) return <p>Loading...</p>
-
       
       return (
         <>
-            <div className="project__intro">
-            <h2 className="project__intro__title">{project.title}</h2>
-            <p className="project__intro__desc">{project.description}</p>
-            <img
-                className="project__intro__img"
-                src={project.mainImage.fields.file.url}
-            />
+            <div className="project__intro" style={{backgroundColor: project.color}}>
+                <img
+                    className="project__intro__img"
+                    src={project.secondaryImage.fields.file.url}
+                />
+                <div className="project__intro__text">
+                    <h2 id="left" className="project__intro__text__title" >{project.title}</h2>
+                    <h2 id="right" className="project__intro__text__title">{project.title}</h2>
+                </div>
             </div>
 
             <div className="project__body"> 
@@ -33,8 +34,7 @@ export default function SingleProject() {
 
     return (
         <div className="project">
-            <p>Hello Erick</p>
-            <Link className="post__back" to="/">
+            <Link className="project__back" to="/">
             {"< Back"}
             </Link>
 

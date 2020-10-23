@@ -37,6 +37,7 @@ const ProjectTiles = () => {
                 <Link
                   key={project.fields.slug}
                   to={project.fields.slug}
+                  style={{backgroundColor: project.fields.color}}
                 ></Link>
               </div>
             );

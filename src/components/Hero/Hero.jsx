@@ -38,7 +38,6 @@ const Header = () => {
           </svg>
         </div>
       <Container id="hero-container">
-        <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
           <div>
             <h1 className="hero-title">
              
@@ -50,13 +49,11 @@ const Header = () => {
             <p className="hero-cta">
               <span className="cta-btn cta-btn--hero">
                 <Link to="projects" smooth duration={1000}>
-                  {cta || 'Know more'}
+                  {'See My Work'}
                 </Link>
               </span>
             </p>
           </div>
-        </Fade>
-        {/* <Fade right={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px"> */}
           <div id="logo">
             <svg width="515px" height="458px" viewBox="0 0 1030 917" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <g id="V1-Fall-2020" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -75,7 +72,6 @@ const Header = () => {
                 </g>
             </svg>
           </div>
-        {/* </Fade> */}
       </Container>
     </section>
   );
