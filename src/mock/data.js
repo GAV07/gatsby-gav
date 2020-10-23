@@ -26,7 +26,7 @@ export const heroData = {
 
 // ABOUT DATA
 export const aboutData = {
-  img: 'Gavin.jpg',
+  img: 'Gavin_close.jpg',
   paragraphOne: 'I am a user experience designer and researcher. I focus on utilizing both quantitative and qualitative data to assist in informing my design process while designing experiences for engagement that connects my audience with the product in a thoughtful manner.',
   paragraphTwo: 'I believe that to design great products we should be constantly listening to those we assist, iterate in a manner conscious with business requirements, and create interfaces that look great.',
   paragraphThree: ' ',
