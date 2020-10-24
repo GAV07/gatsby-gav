@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import setSingleProject from '../Contentful/SetSingleProject'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import CssRulePlugin from 'gsap/CSSRulePlugin'
-import ImageReveal from 'ProjectGSAP'
+//import ImageReveal from 'ProjectGSAP'
 import gsap from 'gsap'
 
 export default function SingleProject() {
@@ -17,8 +17,8 @@ export default function SingleProject() {
     let tl = gsap.timeline({defaults: {duration: 1}})
 
     useEffect(() => {
-        // tl.to(container, {duration: 1, css: {visibility: "visible"}}
-        //     .to(imageReveal, {duration: 1.4, width: "0%"})
+        tl.to(container.current, {duration: 1, css: {visibility: "visible"}})
+            .to(imageReveal.current, {duration: 1.4, width: "0%", ease: "power3.inOut"})
     })
     
     
