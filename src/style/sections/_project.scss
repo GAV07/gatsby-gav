@@ -2,13 +2,12 @@
     text-align: left;
     color: $beige-color;
     
-
     &__back {
         position: absolute;
         top: 0;
         left: 0;
         font-size: 2.2em;
-        color: $red-color;
+        color: $white-color;
         width: 100%;
         padding: 4rem;
     }
@@ -18,39 +17,54 @@
         width: 100vw;
         display: flex;
         align-items: center;
+        justify-content: center;
         padding: 10rem 0 10rem 0;
         
 
         &__text {
             width: 100%;
             height: 100%;
-            display: flex;
-            justify-content: space-between;
+            position: absolute;
 
             &__title {
                 font-size: 12em;
-                
             }
 
-            #left {
-                align-self: flex-end;
-                transform: translateX(-60%); 
-            }
-            #right {
-                align-self: flex-start;
-                text-align: right;
-                transform: translateX(40%);   
-            }
+            // #left {
+            //     align-self: flex-end;
+            //     transform: translateX(-60%); 
+            // }
+            // #right {
+            //     align-self: flex-start;
+            //     text-align: right;
+            //     transform: translateX(40%);   
+            // }
         }
 
 
         &__img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            height: 40%;
-            transform: translate(-50%, -50%)
+            width: 45%;
+            height: 55%;
+            position: relative;
+            overflow: hidden;
+            
+            &:after{
+                content:"";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                right: 0;
+                background-color: white;
+            }
+
+            &__main {
+                width: 100%;
+                position: absolute;
+            }
         }
+
+        
     }
 
     &__body {
