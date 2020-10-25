@@ -9,59 +9,77 @@
         font-size: 2.2em;
         color: $white-color;
         width: 100%;
-        padding: 4rem;
+        padding: 1rem 4rem 1rem 4rem;
+
+        &:hover {
+            color: $primary-color;
+            //background-color: $white-color;
+        }
     }
 
     &__intro {
         height: 100vh;
         width: 100vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding: 10rem 0 10rem 0;
         
-
         &__text {
             width: 100%;
             height: 100%;
-            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
             &__title {
                 font-size: 12em;
             }
 
-            // #left {
-            //     align-self: flex-end;
-            //     transform: translateX(-60%); 
-            // }
-            // #right {
-            //     align-self: flex-start;
-            //     text-align: right;
-            //     transform: translateX(40%);   
-            // }
+            #left {
+                align-self: flex-end;
+                transform: translateX(-60%); 
+            }
+            #right {
+                align-self: flex-start;
+                text-align: right;
+                transform: translateX(40%);   
+            }
         }
 
 
         &__img {
             width: 45%;
-            height: 60%;
-            position: relative;
+            height: 50%;
+            position: absolute;
             overflow: hidden;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             
-            &:after{
-                content:"";
+
+            &__cover {
                 position: absolute;
+                z-index: 2;
                 width: 100%;
                 height: 100%;
-                top: 0;
-                right: 0;
-                background-color: white;
             }
 
             &__main {
                 width: 100%;
                 height: 100%;
-                position: absolute;
+                object-fit: cover;
+            }
+        }
+
+        .down-to-project i {
+            display: flex;
+            justify-content: center;
+            color: $white-color;
+            margin: 1rem 0 $default-font-size;
+            transition: all 0.2s ease-in;
+            cursor: pointer;
+            font-size: 8em;
+          
+            &:hover {
+              transform: translateY(-2px);
             }
         }
 

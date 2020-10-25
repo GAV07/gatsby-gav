@@ -1,16 +1,22 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
 import PortfolioContext from '../../context/context';
-import Motion from './HeroGSAP'
+import gsap from 'gsap'
+
 
 const Header = () => {
   const { hero } = useContext(PortfolioContext);
   const { title, name, subtitle, cta } = hero;
-
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
+  let vertical = useRef(null)
+  let horizontal = useRef([])
+  let bar = useRef(null)
+
+  const gMotion = gsap.timeline({defaults: {duration: 1}})
 
   useEffect(() => {
     if (window.innerWidth > 769) {
@@ -20,6 +26,11 @@ const Header = () => {
       setIsMobile(true);
       setIsDesktop(false);
     }
+
+    gMotion.from(bar.current, {x: -250, opacity: 0, autoAlpha: 0})
+      .from(vertical.current, {y:-100, opacity: 0, autoAlpha: 0})
+      .from(horizontal.current, {x: -100, opacity: 0, stagger: 0.15, autoAlpha: 0})
+
   }, []);
 
   const loadLogo = () => {
@@ -34,11 +45,11 @@ const Header = () => {
                             <text id="G" fontFamily="Futura-Medium, Futura" fontSize="690.5783" fontWeight="400" fill="#F7F4F3">
                                 <tspan x="0" y="717">G</tspan>
                             </text>
-                            <polygon id="Fill-2" fill="#F7F4F3" points="519 520 1030 520 1030 446 519 446"></polygon>
-                            <polygon id="Fill-3" fill="#191E27" points="85 679 94 679 94 218 85 218"></polygon>
-                            <polygon id="Fill-4" fill="#191E27" points="87 483 497 483 497 474 87 474"></polygon>
-                            <polygon id="Fill-5" fill="#191E27" points="86 222 496 222 496 213 86 213"></polygon>
-                            <polygon id="Fill-6" fill="#191E27" points="86 684 496 684 496 675 86 675"></polygon>
+                            <polygon ref={bar} id="Fill-2" fill="#F7F4F3" points="519 520 1030 520 1030 446 519 446"></polygon>
+                            <polygon ref={vertical} id="Fill-3" fill="#191E27" points="85 679 94 679 94 218 85 218"></polygon>
+                            <polygon ref={e => (horizontal.current[0] = e)} id="Fill-4" fill="#191E27" points="87 483 497 483 497 474 87 474"></polygon>
+                            <polygon ref={e => (horizontal.current[1] = e)} id="Fill-5" fill="#191E27" points="86 222 496 222 496 213 86 213"></polygon>
+                            <polygon ref={e => (horizontal.current[2] = e)} id="Fill-6" fill="#191E27" points="86 684 496 684 496 675 86 675"></polygon>
                         </g>
                     </g>
                 </g>

@@ -11,7 +11,7 @@ export const colors = {
 
 // HEAD DATA
 export const headData = {
-  title: 'UX Designer and Researcher', 
+  title: 'Erick Gavin', 
   lang: '', // e.g: en, es, fr, jp
   description: '', 
 };

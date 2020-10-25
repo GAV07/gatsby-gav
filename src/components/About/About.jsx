@@ -1,9 +1,12 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import Fade from 'react-reveal/Fade';
 import { Container, Row, Col } from 'react-bootstrap';
 import Title from '../Title/Title';
 import AboutImg from '../Image/AboutImg';
 import PortfolioContext from '../../context/context';
+import gsap from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 const About = () => {
   const { about } = useContext(PortfolioContext);
@@ -11,6 +14,15 @@ const About = () => {
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
+  let erick = useRef(null)
+  let eBlock = useRef(null)
+  let gavin = useRef(null)
+  let gBlock = useRef(null)
+  let container = useRef(null)
+
+  let eMotion = gsap.timeline({defaults: {duration: 1, delay: .5}})
+  let gMotion = gsap.timeline({defaults: {duration: 1}})
 
   useEffect(() => {
     if (window.innerWidth > 769) {
@@ -20,16 +32,23 @@ const About = () => {
       setIsMobile(true);
       setIsDesktop(false);
     }
+    
+    eMotion.from(erick.current, {scrollTrigger:container.current, y: -50, opacity: 0, autoAlpha: 0, ease: "power3.inOut"})
+      .from(eBlock.current, {scrollTrigger:container.current, x: -300, opacity: 0, autoAlpha: 0, ease: "power3.inOut"})
+      
+    gMotion.from(gavin.current, {scrollTrigger:container.current, y: 50, opacity: 0, autoAlpha: 0, ease: "power3.inOut"})
+      .from(gBlock.current, {scrollTrigger:container.current, x: 300, opacity: 0, autoAlpha: 0, ease: "power3.inOut"})
+
   }, []);
 
   return (
     <section id="about">
       <Container>
-        <Row className="about-wrapper">
+        <Row className="about-wrapper" ref={container}>
           <Col className="about-text" md={6} sm={12}>
             <div id="erick">
-              <div id="e-block"></div>
-              <h1>Erick</h1>
+              <div id="e-block" ref={eBlock}></div>
+              <h1 ref={erick}>Erick</h1>
             </div>
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
               <div className="about-wrapper__info">
@@ -59,8 +78,8 @@ const About = () => {
               </div>
             </Fade>
             <div id="gavin">
-              <div id="g-block"></div>
-              <h1>Gavin</h1>
+              <div id="g-block" ref={gBlock}></div>
+              <h1 ref={gavin}>Gavin</h1>
             </div>
           </Col>
           <Col md={6} sm={12}>
