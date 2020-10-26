@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 //import PortfolioContext from '../../context/context';
 import { colors } from '../../mock/data'
+//import { Link } from '@reach/router'
 import { Link } from 'react-router-dom'
 import useProjects from '../Contentful/SetProjects'
 
@@ -19,7 +20,7 @@ const ProjectTiles = () => {
       setIsDesktop(false);
     }
   }, []);
-
+  
   return (
     <section id="projects">
         <div className="project-wrapper">

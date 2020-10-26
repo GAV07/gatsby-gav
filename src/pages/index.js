@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/main.scss';
 import { BrowserRouter } from 'react-router-dom';
 
+
 export default () => {
   const { title, lang, description } = headData;
 
@@ -20,6 +21,7 @@ export default () => {
       <BrowserRouter>
         <App />
       </BrowserRouter>
+        
     </>
   );
 };
