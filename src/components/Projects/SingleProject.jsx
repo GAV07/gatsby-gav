@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams } from '@reach/router'
 import setSingleProject from '../Contentful/SetSingleProject'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 //import { Link } from 'react-scroll';
@@ -61,7 +61,7 @@ export default function SingleProject() {
 
     return (
         <div className="project">
-            <Link className="project__back" to="/">
+            <Link className="project__back" to="/app">
             {"< Back"}
             </Link>
 

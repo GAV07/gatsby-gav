@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 //import PortfolioContext from '../../context/context';
 import { colors } from '../../mock/data'
-//import { Link } from '@reach/router'
-import { Link } from 'react-router-dom'
+import { Link } from '@reach/router'
 import useProjects from '../Contentful/SetProjects'
 
 const ProjectTiles = () => {
@@ -37,7 +36,7 @@ const ProjectTiles = () => {
                 </div>
                 <Link
                   key={project.fields.slug}
-                  to={project.fields.slug}
+                  to={`/app/${project.fields.slug}`}
                   style={{backgroundColor: project.fields.color}}
                 ></Link>
               </div>
