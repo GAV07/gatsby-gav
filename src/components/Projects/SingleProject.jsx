@@ -61,7 +61,7 @@ export default function SingleProject() {
 
     return (
         <div className="project">
-            <Link className="project__back" to="/app">
+            <Link className="project__back" to="/">
             {"< Back"}
             </Link>
 

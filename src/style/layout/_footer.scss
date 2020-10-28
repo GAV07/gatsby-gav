@@ -37,6 +37,10 @@
 
   p {
     padding: 2rem 0 0 .5rem;
+
+    @include respond(phone) {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -58,6 +62,10 @@
 
     &:hover {
       transform: translateY(-2px);
+    }
+
+    @include respond(phone) {
+      font-size: 2.4rem;
     }
   }
 }

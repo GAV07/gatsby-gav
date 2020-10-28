@@ -28,28 +28,50 @@ const About = () => {
     if (window.innerWidth > 769) {
       setIsDesktop(true);
       setIsMobile(false);
-    } else {
-      setIsMobile(true);
-      setIsDesktop(false);
-    }
-    
+
     eMotion.from(erick.current, {scrollTrigger:container.current, y: -50, opacity: 0, autoAlpha: 0, ease: "power3.inOut"})
       .from(eBlock.current, {scrollTrigger:container.current, x: -300, opacity: 0, autoAlpha: 0, ease: "power3.inOut"})
       
     gMotion.from(gavin.current, {scrollTrigger:container.current, y: 50, opacity: 0, autoAlpha: 0, ease: "power3.inOut"})
       .from(gBlock.current, {scrollTrigger:container.current, x: 300, opacity: 0, autoAlpha: 0, ease: "power3.inOut"})
 
+    } else {
+      setIsMobile(true);
+      setIsDesktop(false);
+    }
+
   }, []);
+
+  const loadE = () => {
+    if(isDesktop) {
+      <div id="erick">
+        <div id="e-block" ref={eBlock}></div>
+        <h1 ref={erick}>Erick</h1>
+      </div>
+    } else if (isMobile) {
+      return null
+    }
+    
+  }
+
+  const loadG = () => {
+    if(isDesktop) {
+      <div id="gavin">
+        <div id="g-block" ref={gBlock}></div>
+        <h1 ref={gavin}>Gavin</h1>
+      </div>
+    } else if (isMobile) {
+      return null
+    }
+    
+  }
 
   return (
     <section id="about">
       <Container>
         <Row className="about-wrapper" ref={container}>
           <Col className="about-text" md={6} sm={12}>
-            <div id="erick">
-              <div id="e-block" ref={eBlock}></div>
-              <h1 ref={erick}>Erick</h1>
-            </div>
+            {loadE()}
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
               <div className="about-wrapper__info">
                 <p className="about-wrapper__info-text">
@@ -77,10 +99,7 @@ const About = () => {
                 )}
               </div>
             </Fade>
-            <div id="gavin">
-              <div id="g-block" ref={gBlock}></div>
-              <h1 ref={gavin}>Gavin</h1>
-            </div>
+            {loadG()}
           </Col>
           <Col md={6} sm={12}>
             <Fade bottom duration={1000} delay={600} distance="30px">

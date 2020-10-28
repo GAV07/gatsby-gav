@@ -17,11 +17,10 @@
   right: 0;
   z-index: -1;
 
-  // If you want to set a background image on the hero section, uncomment these with yout custom image
-
-  /* background: url("/src/assets/[your-image].png");
-  background-position: center;
-  background-size: cover; */
+  @include respond(phone) {
+    padding: 10rem 0 0 0;
+    align-items: flex-start;
+  }
 
   #hero-container {
     width: 100%;
@@ -33,18 +32,12 @@
     margin: 0;
     padding: 0 0 0 12rem;
 
-    // #Fill-2,
-    // #Fill-3,
-    // #Fill-4,
-    // #Fill-5,
-    // #Fill-6 {
-    //   opacity: 0;
-    // }
+    @include respond(phone) {
+      padding: 0 2rem 0 4rem;
+    }
   }
 
-  @include respond(phone) {
-    padding: 0rem $default-font-size;
-  }
+  
 
   .hero-title {
     font-size: 5rem;
@@ -58,18 +51,26 @@
     }
     @include respond(tab-port) {
       font-size: 3.6rem;
-      text-align: center;
     }
     @include respond(phone) {
       font-size: 3.5rem;
       line-height: 1.5;
+      margin-bottom: 2rem;
+      padding: 0 6rem 0 0;
     }
     @include respond(phone-xs) {
       font-size: 2.8rem;
     }
   }
 
-  p { text-align: left; }
+  p { 
+    text-align: left; 
+
+    @include respond(phone) {
+      padding: 0 6rem 0 0;
+      color: $blue-color;
+    }
+  }
 
   .hero-cta {
     display: flex;
@@ -92,8 +93,12 @@
     top: 30%;
     height: 50%;
     width: 100%;
-    opacity: 25%;
-    //z-index: 2;
+    opacity: 0.25;
+
+    @include respond(phone) {
+      top: 70%;
+    }
+    
   }
   .waves {
     position: relative;
@@ -133,11 +138,11 @@
   /*Shrinking for mobile*/
   @media (max-width: 768px) {
     .waves {
-      height:40px;
+      height:200px;
       min-height:40px;
     }
     .content {
-      height:30vh;
+      height:60vh;
     }
     h1 {
       font-size:24px;

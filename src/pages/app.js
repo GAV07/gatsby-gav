@@ -8,7 +8,7 @@ function App() {
 
   return (
     <Router>
-      <Landing path="/app"/>
+      <Landing path="/"/>
       <SingleProject path="/app/:id"/>
     </Router> 
   );

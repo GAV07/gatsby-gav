@@ -9,7 +9,7 @@ import { Router } from "@reach/router"
 
 export default () => {
   const { title, lang, description } = headData;
-
+  console.log("Hello Erick")
   return (
     <>
       <Helmet>
@@ -19,7 +19,7 @@ export default () => {
         <meta name="description" content={description || 'Erick Gavin Portfolio Site'} />
       </Helmet>
       <Router>
-        <App path="/" />
+        <App path="/"/>
       </Router>
     </>
   );

@@ -13,6 +13,10 @@
     -webkit-clip-path: none;
   }
 
+  @include respond(phone) {
+    padding: 3rem 0 3rem 0;
+  }
+
   .contact-wrapper {
     padding: 0 2rem;
     backface-visibility: hidden;
@@ -20,9 +24,18 @@
     justify-content: space-between;
     align-items: center;
 
+    @include respond(phone) {
+      flex-wrap: wrap;
+    }
+
     h1 {
       font-size: 4rem;
       margin: 0;
+
+      @include respond(phone) {
+        font-size: 2.8rem;
+        margin: 3rem 0 0 0;
+      }
     }
 
     &__text,
@@ -42,7 +55,7 @@
     top: 30%;
     height: 50%;
     width: 100%;
-    opacity: 25%;
+    opacity: 0.25;
     z-index: 2;
   }
   .waves {
@@ -83,7 +96,7 @@
   /*Shrinking for mobile*/
   @media (max-width: 768px) {
     .waves {
-      height:40px;
+      height:80px;
       min-height:40px;
     }
     .content {
