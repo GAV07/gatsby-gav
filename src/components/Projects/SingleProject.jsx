@@ -9,22 +9,17 @@ export default function SingleProject() {
     let parse = require('html-react-parser')
     const { id } = useParams()
     const [project, isLoading] = setSingleProject(id)
-    //let container = useRef(null)
+    
     let image = useRef(null)
     let cover = useRef(null)
     let left = useRef(null)
     let right = useRef(null)
     
-
-    let iMotion = gsap.timeline({defaults: {duration: 1}})
-
     useEffect(() => {
-        iMotion.to(cover.current, {width: "0", ease: "power3.inOut"})
-            //.from(image.current, {y: 100, scale: .9})
-
+        gsap.to(cover.current, {duration: 2.2, width: "0", ease: "power3.inOut"})
         gsap.from(left.current, {duration: 2.2, x: 300, opacity: 0, autoAlpha: 0, ease: "power3.inOut"})
         gsap.from(right.current, {duration: 2.2, x: -300, opacity: 0, autoAlpha: 0, ease: "power3.inOut"})
-    }, [])
+    }, [cover.current])
     
     
     const renderProject = () => {

@@ -9,7 +9,6 @@ import { Router } from "@reach/router"
 
 export default () => {
   const { title, lang, description } = headData;
-  console.log("Hello Erick")
   return (
     <>
       <Helmet>

@@ -22,19 +22,18 @@ const Header = () => {
     if (window.innerWidth > 769) {
       setIsDesktop(true);
       setIsMobile(false);
-    
-      gMotion.from(bar.current, {x: -250, opacity: 0, autoAlpha: 0})
-      .from(vertical.current, {y:-100, opacity: 0, autoAlpha: 0})
-      .from(horizontal.current, {x: -100, opacity: 0, stagger: 0.15, autoAlpha: 0})
-    
     } else {
       setIsMobile(true);
       setIsDesktop(false);
     }
-
-    
-
-  }, []);
+    console.log(bar.current)
+    //window.addEventListener("DOMContentLoaded", function() {
+      
+      gMotion.from(bar.current, {x: -250, opacity: 0, autoAlpha: 0})
+        .from(vertical.current, {y:-100, opacity: 0, autoAlpha: 0})
+        .from(horizontal.current, {x: -100, opacity: 0, stagger: 0.15, autoAlpha: 0})
+    //})
+  });
 
   const loadLogo = () => {
     if(isDesktop) {
