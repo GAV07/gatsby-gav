@@ -1,41 +1,24 @@
-import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
+import { useStaticQuery, graphql } from 'gatsby';
 
-const ProjectImg = ({ filename, alt }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        images: allFile {
-          edges {
-            node {
-              relativePath
-              name
-              childImageSharp {
-                fluid(maxWidth: 1366) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={(data) => {
-      const image = data.images.edges.find((n) => n.node.relativePath.includes(filename));
+// useContentfulImage.js
 
-      if (!image) return null;
+// export default assetUrl => {
+//   const { allContentfulAsset } = useStaticQuery(
+//     graphql`
+//       query CONTENTFUL_IMAGE_QUERY {
+//         allContentfulAsset {
+//           nodes {
+//             file {
+//               url
+//             }
+//             fluid(maxWidth: 1050, quality: 85) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//         }
+//       }
+//     `
+//   );
+//   return allContentfulAsset.nodes.find(n => n.file.url === assetUrl).fluid;
+// };
 
-      const imageFluid = image.node.childImageSharp.fluid;
-      return <Img alt={alt} fluid={imageFluid} />;
-    }}
-  />
-);
-
-ProjectImg.propTypes = {
-  filename: PropTypes.string,
-  alt: PropTypes.string,
-};
-
-export default ProjectImg;

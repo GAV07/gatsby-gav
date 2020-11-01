@@ -2,14 +2,24 @@ import React, {useRef, useEffect} from 'react'
 import { Link, useParams } from '@reach/router'
 import setSingleProject from '../Contentful/SetSingleProject'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+//import { BLOCKS } from '@contentful/rich-text-types'
+import Image from "gatsby-image";
 //import { Link } from 'react-scroll';
 import gsap from 'gsap'
+
 
 export default function SingleProject() {
     let parse = require('html-react-parser')
     const { id } = useParams()
     const [project, isLoading] = setSingleProject(id)
-    
+
+    let options = {
+        renderNode: {
+          'embedded-asset-block': (node) =>
+            `<img class="img-fluid" src="${node.data.target.fields.file.url}"/>`
+        }
+    }
+
     let image = useRef(null)
     let cover = useRef(null)
     let left = useRef(null)
@@ -24,7 +34,7 @@ export default function SingleProject() {
     
     const renderProject = () => {
       if (isLoading) return <p>Loading...</p>
-      
+      //console.log(project.secondaryImage.fields.file.url)
       return (
         <>
             <div className="project__intro" style={{backgroundColor: project.color}}>
@@ -48,7 +58,7 @@ export default function SingleProject() {
             </div>
 
             <div className="project__body"> 
-                {parse(documentToHtmlString(project.body))} 
+                {parse(documentToHtmlString(project.body, options))} 
             </div>
         </>
       )

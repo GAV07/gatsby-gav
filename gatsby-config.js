@@ -31,16 +31,5 @@ module.exports = {
         icon: 'src/images/sonic-circle.png',
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-create-client-paths`,
-    //   options: { prefixes: [`/projects/*`] },
-    // },
-  //   {
-  //     resolve: 'gatsby-source-contentful',
-  //     options: {
-  //       spaceId: 'ioabzosdnj0g',
-  //       accessToken: 'djygdbFf-gbzwmeoPgXvNJHD5X_ATuVV3I8Gpzoo7tA'
-  //     }
-  // }
   ],
 };
