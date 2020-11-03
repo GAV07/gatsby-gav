@@ -2,8 +2,8 @@ import React, {useRef, useEffect} from 'react'
 import { Link, useParams } from '@reach/router'
 import setSingleProject from '../Contentful/SetSingleProject'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-//import { BLOCKS } from '@contentful/rich-text-types'
-import Image from "gatsby-image";
+import { INLINES } from '@contentful/rich-text-types'
+//import Image from "gatsby-image";
 //import { Link } from 'react-scroll';
 import gsap from 'gsap'
 
@@ -15,8 +15,13 @@ export default function SingleProject() {
 
     let options = {
         renderNode: {
-          'embedded-asset-block': (node) =>
-            `<img class="img-fluid" src="${node.data.target.fields.file.url}"/>`
+          'embedded-asset-block': (node) => `<img class="img-fluid" src="${node.data.target.fields.file.url}"/>`,
+        },
+        renderNode: {
+            [INLINES.HYPERLINK]: (node) => { if((node.data.uri).includes("player.vimeo.com/video")) {
+                return `<iframe class="project__video" title="Project Video" src="${node.data.uri}" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`
+                }
+            }
         }
     }
 
@@ -34,7 +39,6 @@ export default function SingleProject() {
     
     const renderProject = () => {
       if (isLoading) return <p>Loading...</p>
-      //console.log(project.secondaryImage.fields.file.url)
       return (
         <>
             <div className="project__intro" style={{backgroundColor: project.color}}>
@@ -50,11 +54,6 @@ export default function SingleProject() {
                     <h2 id="left" className="project__intro__text__title" ref={left}>{project.title}</h2>
                     <h2 id="right" className="project__intro__text__title" ref={right}>{project.title}</h2>
                 </div>
-                {/* <span className="down-to-project">
-                    <Link to="project__body" smooth duration={1000}>
-                        <i className="fa fa-angle-down fa-2x" aria-hidden="true" />
-                    </Link>
-                </span> */}
             </div>
 
             <div className="project__body"> 

@@ -26,7 +26,6 @@ const Header = () => {
       setIsMobile(true);
       setIsDesktop(false);
     }
-    console.log(bar.current)
     //window.addEventListener("DOMContentLoaded", function() {
       
       gMotion.from(bar.current, {x: -250, opacity: 0, autoAlpha: 0})
