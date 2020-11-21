@@ -2,7 +2,7 @@ import React, {useRef, useEffect} from 'react'
 import { Link, useParams } from '@reach/router'
 import setSingleProject from '../Contentful/SetSingleProject'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-import { INLINES } from '@contentful/rich-text-types'
+import { INLINES, BLOCKS } from '@contentful/rich-text-types'
 //import Image from "gatsby-image";
 //import { Link } from 'react-scroll';
 import gsap from 'gsap'
@@ -15,16 +15,14 @@ export default function SingleProject() {
 
     let options = {
         renderNode: {
-          'embedded-asset-block': (node) => `<img class="img-fluid" src="${node.data.target.fields.file.url}"/>`,
-        },
-        renderNode: {
             [INLINES.HYPERLINK]: (node) => { if((node.data.uri).includes("player.vimeo.com/video")) {
+                console.log("hey erick")
                 return `<iframe class="project__video" title="Project Video" src="${node.data.uri}" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`
-                }
-            }
-        }
+                } else return `<a href="${node.data.uri}">${node.content[0].value}</a>`
+            },
+            [BLOCKS.EMBEDDED_ASSET]: (node) => { return `<img class="content-img" src="${node.data.target.fields.file.url}"/>`},
+        },
     }
-
     let image = useRef(null)
     let cover = useRef(null)
     let left = useRef(null)
