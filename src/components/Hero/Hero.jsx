@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useRef } from 'react';
+import React, { useContext, useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
@@ -8,7 +8,7 @@ import gsap from 'gsap'
 
 const Header = () => {
   const { hero } = useContext(PortfolioContext);
-  const { title, name, subtitle, cta } = hero;
+  const { title, subtitle} = hero;
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -26,13 +26,14 @@ const Header = () => {
       setIsMobile(true);
       setIsDesktop(false);
     }
-    //window.addEventListener("DOMContentLoaded", function() {
       
-      gMotion.from(bar.current, {x: -250, opacity: 0, autoAlpha: 0})
+  });
+
+  useLayoutEffect(() => {
+    gMotion.from(bar.current, {x: -250, opacity: 0, autoAlpha: 0})
         .from(vertical.current, {y:-100, opacity: 0, autoAlpha: 0})
         .from(horizontal.current, {x: -100, opacity: 0, stagger: 0.15, autoAlpha: 0})
-    //})
-  });
+  })
 
   const loadLogo = () => {
     if(isDesktop) {
@@ -96,10 +97,10 @@ const Header = () => {
           <div>
             <h1 className="hero-title">
              
-              <span className="text-color-main"> {title || 'Hi, my name is'}</span>
+              <span className="text-color-main"> {title}</span>
             </h1>
             <p>
-              {subtitle || "I'm a User Experience Designer and Researcher."}
+              {subtitle}
             </p>
             {loadButton()}
           </div>

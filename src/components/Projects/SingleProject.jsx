@@ -3,6 +3,7 @@ import { Link, useParams } from '@reach/router'
 import setSingleProject from '../Contentful/SetSingleProject'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import { INLINES, BLOCKS } from '@contentful/rich-text-types'
+import ProjectFooter from '../Footer/ProjectFooter' 
 //import Image from "gatsby-image";
 //import { Link } from 'react-scroll';
 import gsap from 'gsap'
@@ -62,12 +63,15 @@ export default function SingleProject() {
     }
 
     return (
-        <div className="project">
-            <Link className="project__back" to="/">
-            {"< Back"}
-            </Link>
+        <>
+            <div className="project">
+                <Link className="project__back" to="/">
+                {"< Back"}
+                </Link>
 
-            {renderProject()}
-        </div>
+                {renderProject()}
+            </div>
+            {ProjectFooter()}
+        </>
     )
 }

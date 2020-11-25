@@ -81,3 +81,22 @@
     transform: translateY(-2px);
   }
 }
+
+//Footer under projects
+.project-footer {
+  margin-top: 10em;
+  padding: 5em 0 3em 0;
+}
+
+.project-links { 
+  padding: 3em;
+  a { 
+    font-size: 2em;
+    margin: 0 1em 0 1em;
+    color: $white-color;
+  }
+  a:hover {
+    color: $blue-color;
+  }
+  
+}

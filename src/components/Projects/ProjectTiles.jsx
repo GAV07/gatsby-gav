@@ -27,7 +27,7 @@ const ProjectTiles = () => {
             return (
               <div className="project-frame" style={{backgroundImage: `url(${project.fields.mainImage.fields.file.url})`}} key={project.fields.slug}>
                 <div className="project-wrapper__text">
-                  <h3 className="project-wrapper__text-title">{project.fields.title || 'Project Title'}</h3>
+                  <h3 className="project-wrapper__text-title">{project.fields.title}</h3>
                   <div>
                     <p>
                       { project.fields.subtitle || 'A short blurb about the project to entice reading.'}

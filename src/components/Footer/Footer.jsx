@@ -33,7 +33,7 @@ const Footer = () => {
             })}
         </div>
         <hr />
-        <p>Made with love and patience by Gav</p>
+        <p>Made with 💛 and patience by Gav</p>
       </Container>
     </footer>
   );
