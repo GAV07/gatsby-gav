@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { getProjects } from "./GetData";
+import { getProjects } from './GetData';
 
 const promise = getProjects();
 
@@ -9,12 +9,11 @@ export default function useProjects() {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    promise.then(Projects => {
+    promise.then((Projects) => {
       setProjects(Projects);
       setLoading(false);
     });
   }, []);
 
   return [projects, isLoading];
-
 }

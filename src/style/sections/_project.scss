@@ -1,131 +1,128 @@
 .project {
-    text-align: left;
-    color: $beige-color;
-    
-    &__back {
-        position: absolute;
-        top: 0;
-        left: 0;
-        font-size: 2.2em;
-        color: $white-color;
+  text-align: left;
+  color: $beige-color;
+
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2.2em;
+    color: $white-color;
+    width: 100%;
+    padding: 1rem 4rem 1rem 4rem;
+
+    &:hover {
+      color: $primary-color;
+      //background-color: $white-color;
+    }
+
+    @include respond(phone) {
+      text-align: left;
+      position: fixed;
+      color: $secondary-color;
+      background-color: white;
+      padding: 1rem 2rem 1rem 2rem;
+    }
+  }
+
+  &__intro {
+    height: 100vh;
+    width: 100vw;
+    padding: 2rem 0 2rem 0;
+
+    &__text {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      white-space: nowrap;
+
+      &__title {
+        font-size: 12em;
+
+        @include respond(phone) {
+          font-size: 6em;
+        }
+      }
+
+      #left {
+        align-self: flex-end;
+        transform: translateX(-60%);
+      }
+      #right {
+        align-self: flex-start;
+        text-align: right;
+        transform: translateX(40%);
+      }
+    }
+
+    &__img {
+      width: 45%;
+      height: 50%;
+      position: absolute;
+      overflow: hidden;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include respond(phone) {
         width: 100%;
-        padding: 1rem 4rem 1rem 4rem;
+      }
 
-        &:hover {
-            color: $primary-color;
-            //background-color: $white-color;
-        }
+      &__cover {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+      }
 
-        @include respond(phone) {
-            text-align: left;
-            position: fixed;
-            color: $secondary-color;
-            background-color: white;
-            padding: 1rem 2rem 1rem 2rem;
-        }
+      &__main {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__body {
+    font-size: $default-font-size;
+    padding: 2rem 20rem 2rem 20rem;
+    color: $black-color;
+
+    @include respond(phone) {
+      padding: 2rem 4rem 2rem 4rem;
     }
 
-    &__intro {
-        height: 100vh;
-        width: 100vw;
-        padding: 2rem 0 2rem 0;
-        
-        &__text {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            white-space: nowrap;
-
-            &__title {
-                font-size: 12em;
-
-                @include respond(phone) {
-                    font-size: 6em;
-                }
-            }
-
-            #left {
-                align-self: flex-end;
-                transform: translateX(-60%); 
-            }
-            #right {
-                align-self: flex-start;
-                text-align: right;
-                transform: translateX(40%);   
-            }
-        }
-
-
-        &__img {
-            width: 45%;
-            height: 50%;
-            position: absolute;
-            overflow: hidden;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            
-            @include respond(phone) {
-                width: 100%;
-            }
-
-            &__cover {
-                position: absolute;
-                z-index: 2;
-                width: 100%;
-                height: 100%;
-            }
-
-            &__main {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
+    a {
+      color: $red-color;
+      font-size: $default-font-size;
     }
 
-    &__body {
-        font-size: $default-font-size;
-        padding: 2rem 20rem 2rem 20rem;
-        color: $black-color;
+    h1 {
+      font-size: 3em;
+      margin: 5rem 0 1rem 0;
 
-        @include respond(phone) {
-            padding: 2rem 4rem 2rem 4rem;
-        }
-
-        a {
-            color: $red-color;
-            font-size: $default-font-size;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin: 5rem 0 1rem 0;
-
-            @include respond(phone) {
-                font-size: 1.5em;
-            }
-        }
-        h3 {
-            font-size: 1.2em;
-            margin: 2rem 0 1rem 0;
-        }
-
-        p {
-
-            .project__video {
-                display: block;
-                margin: 0 auto;
-            }
-        }
-
-        .content-img {
-            display: block;
-            margin: 2em auto;
-            max-height: 30em;
-        }
-        
+      @include respond(phone) {
+        font-size: 1.5em;
+      }
     }
+    h3 {
+      font-size: 1.2em;
+      margin: 2rem 0 1rem 0;
+    }
+
+    p {
+      .project__video {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .content-img {
+      display: block;
+      margin: 2em auto;
+      max-height: 30em;
+    }
+  }
 }

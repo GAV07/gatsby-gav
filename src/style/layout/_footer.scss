@@ -36,7 +36,7 @@
   }
 
   p {
-    padding: 2rem 0 0 .5rem;
+    padding: 2rem 0 0 0.5rem;
 
     @include respond(phone) {
       font-size: 1rem;
@@ -88,9 +88,9 @@
   padding: 5em 0 3em 0;
 }
 
-.project-links { 
+.project-links {
   padding: 3em;
-  a { 
+  a {
     font-size: 2em;
     margin: 0 1em 0 1em;
     color: $white-color;
@@ -98,5 +98,4 @@
   a:hover {
     color: $blue-color;
   }
-  
 }

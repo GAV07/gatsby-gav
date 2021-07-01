@@ -21,4 +21,3 @@ import { useStaticQuery, graphql } from 'gatsby';
 //   );
 //   return allContentfulAsset.nodes.find(n => n.file.url === assetUrl).fluid;
 // };
-

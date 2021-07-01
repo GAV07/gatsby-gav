@@ -3,22 +3,15 @@
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  border-bottom: 0px;
+  justify-content: space-between;
   background: $black-color;
   font-weight: 400;
   color: $primary-color;
-  padding: 0;
-  //padding: 0rem 5.6rem;
-  margin-bottom: 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   z-index: -1;
 
   @include respond(phone) {
-    padding: 10rem 0 0 0;
     align-items: flex-start;
   }
 
@@ -27,24 +20,22 @@
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 0 0 0 12rem;
+    padding: 0 10em 0 10em;
 
     @include respond(phone) {
       padding: 0 2rem 0 4rem;
     }
   }
 
-  
-
   .hero-title {
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: 700;
     margin-bottom: 1rem;
     text-align: left;
-    max-width: 800px;
+    max-width: .8;
 
     @include respond(tab-land) {
       font-size: 4rem;
@@ -63,8 +54,20 @@
     }
   }
 
-  p { 
-    text-align: left; 
+  #menu {
+    margin-top: 10em;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      font-size: $big-button-size;
+      color: white;
+    }
+  }
+
+  p {
+    text-align: left;
 
     @include respond(phone) {
       padding: 0 6rem 0 0;
@@ -72,22 +75,6 @@
     }
   }
 
-  .hero-cta {
-    display: flex;
-    margin: 2.5rem 0 0 0;
-    
-    @include respond(tab-port) {
-      justify-content: center;
-    }
-
-    & a {
-      font-size: 2rem;
-
-      @include respond(phone) {
-        font-size: 2rem;
-      }
-    }
-  }
   .waves-container {
     position: absolute;
     top: 30%;
@@ -98,18 +85,19 @@
     @include respond(phone) {
       top: 70%;
     }
-    
   }
   .waves {
     position: relative;
     width: 100%;
-    height:90%;
-    margin-bottom:-7px; /*Fix for safari gap*/
-    min-height:100px;
+    height: 90%;
+    margin-bottom: -7px; /*Fix for safari gap*/
+    min-height: 100px;
   }
-  #gentle-wave { stroke-width: .15px;}
+  #gentle-wave {
+    stroke-width: 0.15px;
+  }
   .parallax > use {
-    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
   }
   .parallax > use:nth-child(1) {
     animation-delay: -2s;
@@ -129,23 +117,23 @@
   }
   @keyframes move-forever {
     0% {
-     transform: translate3d(-90px,0,0);
+      transform: translate3d(-90px, 0, 0);
     }
-    100% { 
-      transform: translate3d(85px,0,0);
+    100% {
+      transform: translate3d(85px, 0, 0);
     }
   }
   /*Shrinking for mobile*/
   @media (max-width: 768px) {
     .waves {
-      height:200px;
-      min-height:40px;
+      height: 200px;
+      min-height: 40px;
     }
     .content {
-      height:60vh;
+      height: 60vh;
     }
     h1 {
-      font-size:24px;
+      font-size: 24px;
     }
   }
 }

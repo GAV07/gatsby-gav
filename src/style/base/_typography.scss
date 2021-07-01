@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;600;800&family=Open+Sans:wght@300;400&display=swap');
 
-h1,h2,h3 {
-  //font-weight: 700;
-  font-family: 'PT Serif', serif;
+h1,
+h2,
+h3 {
+  font-family: 'Inter', sans-serif;
 }
 
-
 p {
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: $default-font-size;
 }
 a {
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: $button-font-size;
 }
 

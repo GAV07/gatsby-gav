@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect} from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 import { Container, Row, Col } from 'react-bootstrap';
 import AboutImg from '../Image/AboutImg';
@@ -6,7 +6,7 @@ import PortfolioContext from '../../context/context';
 
 const About = () => {
   const { about } = useContext(PortfolioContext);
-  const { img, paragraphOne, paragraphTwo} = about;
+  const { img, paragraphOne, paragraphTwo } = about;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -19,7 +19,6 @@ const About = () => {
       setIsMobile(true);
       setIsDesktop(false);
     }
-
   }, []);
 
   return (

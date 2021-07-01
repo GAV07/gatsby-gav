@@ -7,6 +7,7 @@
 
 @import './components/buttons';
 
+@import './layout/header';
 @import './layout/footer';
 @import './layout/sections';
 
@@ -15,6 +16,5 @@
 @import './sections/hero';
 @import './sections/project_tiles';
 @import './sections/project.scss';
-
 
 @import './vendor/css/font-awesome.min.css';
